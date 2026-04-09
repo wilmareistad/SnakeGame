@@ -1,7 +1,7 @@
 ﻿Console.CursorVisible = false;
 
-var width = 20;
-var height = 20;
+var width = 30;
+var height = 15;
 var movex = 1;
 var movey = 0;
 
@@ -16,6 +16,7 @@ List<(int x, int y)> snake = new List<(int x, int y)>
 Random rand = new Random();
 (int x, int y) foodPosition = (rand.Next(width), rand.Next(height));
 
+// Game loop
 while (true)
 {
     // Check if a key has been pressed
@@ -52,17 +53,32 @@ while (true)
     }
 
     // Draw
-    Console.Clear();
+    Console.SetCursorPosition(0, 0); // reset cursor
     for (int y = 0; y < height; y++)
     {
         for (int x = 0; x < width; x++)
         {
-            if (snake.Contains((x, y)))
-                Console.Write("0");
+            if (snake[0] == (x, y))
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("●");
+            }
+            else if (snake.Contains((x, y)))
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("●");
+            }
             else if ((x, y) == foodPosition)
-                Console.Write("X");
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("✱");
+            }
             else
-                Console.Write(".");
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write("□"); //
+            }
+            Console.ResetColor();
         }
         Console.WriteLine();
     }
@@ -79,7 +95,7 @@ while (true)
     if (snake.Skip(1).Contains(newHead))
     {
         Console.SetCursorPosition(0, height + 1);
-        Console.WriteLine("Game Over! You hit yourself BITCH");
+        Console.WriteLine("Game Over! You hit yourself LOSER!");
         break;
     }
 
