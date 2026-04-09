@@ -34,10 +34,22 @@ while (true)
     // Update snake position
     var head = snake[0];
     var newHead = (x: head.x + movex, y: head.y + movey);
-            
-    // Move Body
-    snake.Insert(0, newHead);
-    snake.RemoveAt(snake.Count - 1);
+    
+    if (newHead == foodPosition)
+    {
+        // Grow snake
+        snake.Insert(0, newHead);
+        do
+        {
+            foodPosition = (rand.Next(width), rand.Next(height));
+        } while (snake.Contains(foodPosition)); // avoid spawning food on the snake
+    }
+    else
+    {
+        // Normal move: insert head and remove tail
+        snake.Insert(0, newHead);
+        snake.RemoveAt(snake.Count - 1);
+    }
 
     // Draw
     Console.Clear();
@@ -46,11 +58,29 @@ while (true)
         for (int x = 0; x < width; x++)
         {
             if (snake.Contains((x, y)))
-                Console.Write("O");
+                Console.Write("0");
+            else if ((x, y) == foodPosition)
+                Console.Write("X");
             else
                 Console.Write(".");
         }
         Console.WriteLine();
+    }
+    
+    // Game over if the snake hits the wall
+    if (newHead.x < 0 || newHead.x >= width || newHead.y < 0 || newHead.y >= height)
+    {
+        Console.SetCursorPosition(0, height + 1);
+        Console.WriteLine("Game Over!");
+        break;
+    }
+    
+    // Game over if the snake hits itself
+    if (snake.Skip(1).Contains(newHead))
+    {
+        Console.SetCursorPosition(0, height + 1);
+        Console.WriteLine("Game Over! You hit yourself BITCH");
+        break;
     }
 
     Thread.Sleep(200); // Speed
