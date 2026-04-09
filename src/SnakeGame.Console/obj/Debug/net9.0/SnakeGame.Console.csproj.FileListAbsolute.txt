@@ -1,0 +1,15 @@
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/bin/Debug/net9.0/SnakeGame.Console
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/bin/Debug/net9.0/SnakeGame.Console.deps.json
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/bin/Debug/net9.0/SnakeGame.Console.runtimeconfig.json
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/bin/Debug/net9.0/SnakeGame.Console.dll
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/bin/Debug/net9.0/SnakeGame.Console.pdb
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.AssemblyInfoInputs.cache
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.AssemblyInfo.cs
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.csproj.CoreCompileInputs.cache
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.sourcelink.json
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.dll
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/refint/SnakeGame.Console.dll
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.pdb
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/SnakeGame.Console.genruntimeconfig.cache
+/Users/wilma/dev/c#/SnakeGame/src/SnakeGame.Console/obj/Debug/net9.0/ref/SnakeGame.Console.dll
