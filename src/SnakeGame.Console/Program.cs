@@ -5,6 +5,7 @@ var height = 15;
 var movex = 1;
 var movey = 0;
 int score = 0;
+int speed = 200;
 
 List<(int x, int y)> snake = new List<(int x, int y)>
 {
@@ -42,6 +43,7 @@ while (true)
         // Grow snake
         snake.Insert(0, newHead);
         score++;
+        speed = Math.Max(50, speed - 10); // faster, but never under 50ms
         do
         {
             foodPosition = (rand.Next(width), rand.Next(height));
@@ -78,7 +80,7 @@ while (true)
             else
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write("□"); //
+                Console.Write("#"); //
             }
             Console.ResetColor();
         }
@@ -104,6 +106,6 @@ while (true)
         break;
     }
 
-    Thread.Sleep(200); // Speed
+    Thread.Sleep(speed); // Speed
     
 }
