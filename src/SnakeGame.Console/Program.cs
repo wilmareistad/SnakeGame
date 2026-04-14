@@ -43,7 +43,7 @@ while (true)
         // Grow snake
         snake.Insert(0, newHead);
         score++;
-        speed = Math.Max(50, speed - 10); // faster, but never under 50ms
+        speed = Math.Max(30, speed - 10); // faster, but never under 30ms
         do
         {
             foodPosition = (rand.Next(width), rand.Next(height));
@@ -80,7 +80,7 @@ while (true)
             else
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write("#"); //
+                Console.Write("□"); //
             }
             Console.ResetColor();
         }
@@ -105,7 +105,7 @@ while (true)
         Console.WriteLine($"Game Over! You hit yourself LOSER! Score: {score}"); 
         break;
     }
-
-    Thread.Sleep(speed); // Speed
+    int sleepTime = movey != 0 ? speed * 2 : speed; // dubbel time for up and down
+    Thread.Sleep(sleepTime); // Speed
     
 }
