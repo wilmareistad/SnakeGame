@@ -4,6 +4,7 @@ var width = 30;
 var height = 15;
 var movex = 1;
 var movey = 0;
+int score = 0;
 
 List<(int x, int y)> snake = new List<(int x, int y)>
 {
@@ -40,6 +41,7 @@ while (true)
     {
         // Grow snake
         snake.Insert(0, newHead);
+        score++;
         do
         {
             foodPosition = (rand.Next(width), rand.Next(height));
@@ -83,11 +85,14 @@ while (true)
         Console.WriteLine();
     }
     
+    Console.SetCursorPosition(0, height);
+    Console.WriteLine($"Poäng: {score}   ");
+    
     // Game over if the snake hits the wall
     if (newHead.x < 0 || newHead.x >= width || newHead.y < 0 || newHead.y >= height)
     {
         Console.SetCursorPosition(0, height + 1);
-        Console.WriteLine("Game Over!");
+        Console.WriteLine($"Game Over! Score: {score}");
         break;
     }
     
@@ -95,7 +100,7 @@ while (true)
     if (snake.Skip(1).Contains(newHead))
     {
         Console.SetCursorPosition(0, height + 1);
-        Console.WriteLine("Game Over! You hit yourself LOSER!");
+        Console.WriteLine($"Game Over! You hit yourself LOSER! Score: {score}"); 
         break;
     }
 
