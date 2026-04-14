@@ -2,13 +2,14 @@
 
 var width = 30;
 var height = 15;
+Random rand = new Random();
 
 while (true)
 {
     var movex = 1;
     var movey = 0;
     int score = 0;
-    int speed = 200;
+    int speed = 180;
 
     List<(int x, int y)> snake = new List<(int x, int y)>
     {
@@ -18,7 +19,6 @@ while (true)
     };
 
     // Random food position
-    Random rand = new Random();
     (int x, int y) foodPosition = (rand.Next(width), rand.Next(height));
 
     // Game loop
